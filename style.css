@@ -91,6 +91,11 @@
             clear:both;
         }
 
+        .locationList {
+            color: navy;
+            font-size: 20px;
+        }
+
   /* Style of page footer */
 .footer {
     text-align: center;
