@@ -1,0 +1,108 @@
+/* 'Style of landing page and quiz page */
+/* .brand {
+    font-family: 'Montserrat', sans-serif;
+    color:white;
+    font-size:40px;
+    display: inline-block;
+    text-align: center;
+  
+   
+} */
+
+.header {
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    }
+
+/* Style of ampersand */
+.ampersand {
+    float: left;
+    margin-right: 10px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: slateblue;
+    color: white;
+    border-radius: 0;
+    border-bottom: 10px solid navy;
+    width: 1025px;
+    height: 300px;
+    margin-left: 10px;
+    margin-top:90px;
+     }
+
+     #forecast {
+         margin: 10px 10px 10px 25px;
+         height: 175px;
+         width: 175px;
+        }
+  
+        #tfheader{
+            float: top;
+            background-color:lightgrey;
+            margin-top: -330px;
+            margin-left: 20px;
+        }
+        #tfnewsearch{
+            float: right;
+            padding:20px;
+        }
+        .tftextinput2{
+            margin: 0;
+            padding: 5px 15px;
+            font-family: 'Montserrat', sans-serif;
+            font-size:14px;
+            color:#666;
+            border:1px solid slateblue; border-right:0px;
+            border-top-left-radius: 5px 5px;
+            border-bottom-left-radius: 5px 5px;
+        }
+        .tfbutton2 {
+            margin: 0;
+            padding: 5px 7px;
+            font-family: 'Montserrat', sans-serif;
+            font-size:14px;
+            font-weight:bold;
+            outline: none;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            border: solid 1px slateblue; border-right:0px;
+            background: slateblue;
+            background: -webkit-gradient(linear, left top, left bottom, from(slateblue), to(slateblue));
+            background: -moz-linear-gradient(top,  slateblue,  slateblue);
+            border-top-right-radius: 5px 5px;
+            border-bottom-right-radius: 5px 5px;
+        }
+        .tfbutton2:hover {
+            text-decoration: none;
+            background: #007ead;
+            background: -webkit-gradient(linear, left top, left bottom, from(slateblue), to(slateblue));
+            background: -moz-linear-gradient(top,  slateblue,  slateblue);
+        }
+        /* Fixes submit button height problem in Firefox */
+        .tfbutton2::-moz-focus-inner {
+          border: 0;
+        }
+        .tfclear{
+            clear:both;
+        }
+
+  /* Style of page footer */
+.footer {
+    text-align: center;
+    color: white;
+    font-size: 13px;
+    margin-left: 650px;
+    padding: 10px;
+}
+ 
+  /* Style of @media */
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: lightgray;
+    }
+  }
