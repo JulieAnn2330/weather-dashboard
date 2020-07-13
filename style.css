@@ -13,7 +13,7 @@
 
 /* Style of main forecast */
 .jumbotron {
-    text-align: center;
+    text-align: left;
     background-color: slateblue;
     color: white;
     border-radius: 0;
@@ -27,7 +27,7 @@
 /* Text of 5-Day forecast */
 .fiveDayForecast {
     margin-top: -30px;
-    margin-left: 15px;
+    margin-left: 10px;
     color: navy;
     }
 
