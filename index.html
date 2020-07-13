@@ -21,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
 
     <!-- Navigation Bar -->
-       <!-- Footer -->
+       <!-- Header -->
        <div class="container">
         <nav class="navbar fixed-top navbar-white bg-secondary" .text-white>
             <img class="ampersand" src="./Assets/ampersand.png" width="30" height="30" class="d-inline-block align-top"
@@ -35,10 +35,8 @@
 
 <!-- Weather Dashboard Code Here -->
 <div class="jumbotron">
-    <h1 class="display-4">Current Location</h1>
-    <p class="lead">Current Forecast</p>
-    <hr class="my-4">
-    <p>Current Forecast</p>
+    <h1 class="display-4" id="weather-view">Current Location</h1>
+ 
     <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
   </div>
 
@@ -87,29 +85,18 @@
       </div>
     </container>
 
-    <head>
-    <title>Search Box Example 2 - default placeholder text gets cleared on click</title>
-    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
-    </head>
-    <body>
         <!-- HTML for SEARCH BAR -->
-        <div id="tfheader">
-            <form id="tfnewsearch" method="get" action="http://www.google.com">
-                    <input type="text" id="tfq2b" class="tftextinput2" name="q" size="40" maxlength="160" value="Search By City"><input type="submit" value=">" class="tfbutton2">
-            </form>
-            <ul class="locationList">
-                <li onclick="location.href = 'http://www.google.com';">Text</li>
-                <li onclick="location.href = 'http://www.google.com';">Text</li>
-                <li onclick="location.href = 'http://www.google.com';">Text</li>
-                <li onclick="location.href = 'http://www.google.com';">Text</li>
-                <li onclick="location.href = 'http://www.google.com';">Text</li>
-                <li onclick="location.href = 'http://www.google.com';">Text</li>
-            </ul>
-
-
-            <div class="tfclear"></div>
-        </div>
-    </body>
+        <div id="left-box">
+          <form id="weather-form">
+              </strong><label for="city-input"><strong>Search by City:</strong></label>
+              <br>
+              <input type="text" id="city-input" placeholder="City">
+  
+              <!-- Button will trigger new cities to be added -->
+              <input id="searchBtn" class="btn btn-secondary mb-2" type="submit" value="Search" style="background-color:slateblue">
+          </form>
+  
+          <div class="locations-array"></div>
     
    <!-- Footer -->
      <div class="container">
