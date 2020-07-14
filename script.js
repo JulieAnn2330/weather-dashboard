@@ -86,9 +86,15 @@ function renderButtons(city) {
        var $weather = $("#city-input").val();
        console.log($weather);
     
+      
        locations.push($weather);
        localStorage.setItem("weather", JSON.stringify(locations));
-    //    localStorage.getItem("weather", JSON.parse(locations));
+       var saveLocations = JSON.parse(localStorage.getItem(locations));
+           
+        // $("#city-input").val("");
+        // $("#city-input").val(saveLocations);
+     
+
     
     renderButtons($weather);
     displayWeather($weather);

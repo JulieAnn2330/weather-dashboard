@@ -23,6 +23,7 @@
     margin-left: 10px;
     margin-top:120px;
      }
+     
 
 /* Text of 5-Day forecast */
 .fiveDayForecast {
@@ -77,6 +78,7 @@ p{
   margin: 0;
   padding:0;
 }
+
 img {
     margin-left: 15px;
     margin-top: 10px;
