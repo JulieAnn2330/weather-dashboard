@@ -63,23 +63,14 @@
 
   /*  I just added this */
 
-#weather-view {
-    width: 100%;
-    height: 200px;
-    padding: 10px;
-    margin: auto;
-}
-
-#left-box {
-    float: right;
+#searchBox {
     width: 25%;
     height: 525px;
     border: 1px solid navy;
     padding: 10px;
     background-color: lightgray;
-    margin-top: -342px;
-    margin-left: 20px;
-    
+    margin-top: -535px;
+    margin-left: 1080px;
 }
 
 p{

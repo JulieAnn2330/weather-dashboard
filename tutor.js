@@ -10,24 +10,25 @@ var lat = "latitude";
 var lon = "longitude";
 var uvIndex = (lat + lon)
 
-// function renderFromLocalStorage() {
+function renderFromLocalStorage() {
     
-//     var localStorageArray = JSON.parse(localStorage.getItem("weather"));
-    
-    
-//     for (var i=0; i<localStorageArray.length; i++) {
-//         console.log(localStorageArray[i]);
-//     }
-//     localStorageArray.forEach(function (city, index, originalArr) {
-//         renderButtons(city);
+var localStorageArray = JSON.parse(localStorage.getItem("weather"));
 
-locations.forEach(function (city, index, originalArr) {
+
+for (var i=0; i<localStorageArray.length; i++) {
+    console.log(localStorageArray[i]);
+}
+localStorageArray.forEach(function (city, index, originalArr) {
     renderButtons(city);
 
     if (index === originalArr.length - 1) {
         displayWeather(city);
     }
 });
+
+}
+
+renderFromLocalStorage();
 
 function displayWeather(city) {
     var queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}&units=imperial`;
@@ -73,7 +74,7 @@ $.get(queryURL).then(function (response) {
 }
 
 function renderButtons(city) {
-    var btn = $("<button>");
+    btn = $("<button>");
     btn.addClass("city-btn btn btn-default").css("display", "block");
     btn.attr("data-name", city);
     btn.text(city);
@@ -88,13 +89,13 @@ function renderButtons(city) {
     
        locations.push($weather);
        localStorage.setItem("weather", JSON.stringify(locations));
-    //    localStorage.getItem("weather", JSON.parse(locations));
+       
     
     renderButtons($weather);
     displayWeather($weather);
     });
     
-    $(document).on("click", ".city-btn", function() {
+    $(document).on("click", "city-btn", function() {
         var city = $(this).attr("data-name");
         displayWeather(city);
     });
