@@ -30,27 +30,30 @@ locations.forEach(function (city, index, originalArr) {
 });
 
 function displayWeather(city) {
-    var queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}&units=imperial`;
+    var queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}&units=imperial`;
 
 
 $.get(queryURL).then(function (response) {
     var lon = response.coord.lon;
     var lat = response.coord.lat;
-    var queryUV = `https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+    var queryUV = `http://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+    var iconURL = `http://openweathermap.org/img/wn/10d@2x.png`;
 
+    $.get(iconURL)
     $.get(queryUV)
     .then(function (uvResponse) {
         console.log(uvResponse);
+        var weather = response.weather[0].description + response.weather[0].icon;
         var temperature = response.main.temp;
         var humidity = response.main.humidity;
         var windSpeed = response.wind.speed;
 
         var cityDiv = $("<div class='city'>");
         var header = $("<h1>").text(city);
-        // var icon = $("<img>").image(icon);
-        var lineOne = $("<p>").text("Temperature: " + temperature + String.fromCharCode(176) + "F");
-        var lineTwo = $("<p>").text("Humidity: " + humidity + "%");
-        var lineThree = $("<p>").text("Wind Speed: " + windSpeed + "mph");
+        var lineOne = $("<p>").text("Current Conditions:  " + weather);
+        var lineTwo = $("<p>").text("Temperature: " + temperature + String.fromCharCode(176) + "F");
+        var lineThree = $("<p>").text("Humidity: " + humidity + "%");
+        var lineFour = $("<p>").text("Wind Speed: " + windSpeed + "mph");
         
         var color = "green";
         var UVindex = uvResponse.value;
@@ -62,8 +65,8 @@ $.get(queryURL).then(function (response) {
         };
 
     var uvSpan = $("<span>").text(uvResponse.value).css("color", color);
-    var lineFour = $("<p>").text("UV Index: ").append(uvSpan);
-    cityDiv.append(header, lineOne, lineTwo, lineThree, lineFour);
+    var lineFive = $("<p>").text("UV Index: ").append(uvSpan);
+    cityDiv.append(header, lineOne, lineTwo, lineThree, lineFour, lineFive);
 
     $("#weather-view").empty();
     $("#weather-view").prepend(cityDiv);
@@ -87,16 +90,23 @@ function renderButtons(city) {
        var $weather = $("#city-input").val();
        console.log($weather);
     
-      
+       function storeLocations(){
+        localStorage.setItem("locations", JSON.stringify(locations)); 
+    }
+        function saveLocations() {
+            JSON.parse(localStorage.getItem(locations));  
+        }
+
+
        locations.push($weather);
        localStorage.setItem("weather", JSON.stringify(locations));
-       var saveLocations = JSON.parse(localStorage.getItem(locations));
+  
            
         // $("#city-input").val("");
         // $("#city-input").val(saveLocations);
      
-
-    
+    saveLocations();
+    storeLocations();
     renderButtons($weather);
     displayWeather($weather);
     });

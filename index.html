@@ -35,12 +35,12 @@
 
 <!-- Weather Dashboard Code Here -->
 <div class="jumbotron">
-    <h3  id="weather-view" class="title">Current Location</h3>
-    <text class="lineOne"></text>
-    <text class="lineTwo"></text>
-    <text class="lineThree"></text>
-    <text class="lineFour"></text>
- 
+    <h1  id="weather-view" id = "name_of_city" class="title">Current Location</h>
+     <h3 id="today_temp"></h3>
+    <h3 id="today_humidity"></h3>
+    <h3 id="today_wind_speed"></h3>
+    <h3 id="todayUVIndex"></h3>
+    <img id="today_icon_div" src="">
  
     <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
   </div>
@@ -48,7 +48,7 @@
   <h2 class="fiveDayForecast">5-Day Forecast</h2>
 
 <div id="forcast icons">
- <container>
+ <container></container>
     <div class="row">
     <div id="forecast" class="card text-white" style="background-color:slateblue;">
         <div class="card-header">Date+1</div>
@@ -100,10 +100,17 @@
   
               <!-- Button will trigger new cities to be added -->
               <input id="searchBtn" class="btn btn-secondary mb-2" type="submit" value="Search" style="background-color:slateblue">
-          </form>
+              <h5 class="justify-content-center pt-2 pl-3">Your previously searched cities: </h5>
+              <div class="container my-3 col-12" id="searched_cities_container">
+      
+              </div>
+          
+            </form>
   
           <div class="locations-array"></div>
-    
+
+        </div>
+       
    <!-- Footer -->
      <div class="container">
         <nav class="navbar fixed-bottom navbar-white bg-secondary" .text-white>
@@ -117,4 +124,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script-main.js"></script>
