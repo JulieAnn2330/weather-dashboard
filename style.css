@@ -11,6 +11,10 @@
 
 }
 
+#weather-view {
+  margin-top: -50px;
+}
+
 /* Style of main forecast */
 .jumbotron {
     text-align: left;
@@ -21,9 +25,8 @@
     width: 1025px;
     height: 350px;
     margin-left: 10px;
-    margin-top: 80px !important;
-    padding: 10px;
-     }
+    margin-top: 70px !important;
+       }
      
 /* Text of 5-Day forecast */
 .fiveDayForecast {
@@ -37,7 +40,7 @@
   width: 175px;
   height: 190px;
   background-color: slateblue;
-  margin: 0px 10px 10px 25px;
+  margin: 5px 10px 10px 25px;
 }
 
 
@@ -53,7 +56,7 @@
     color: white;
     font-size: 13px;
     margin-left: 650px;
-    padding: 10px;
+  
     }
  
   /* Style of @media */
