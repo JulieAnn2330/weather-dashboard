@@ -9,12 +9,12 @@ var lon = "longitude";
 var uvIndex = (lat + lon);
 var apiKey = "19113027cee7d9c234b7c839da7576c2";
 //start with empty array
-let cities = [""];
+let cities = ["Kansas City", "Naples", "New York City", "Lehigh Acres"];
 init(); 
 listClicker(); 
 searchClicker(); 
 
-//run function to pull saved cities from local storage and fill array with it
+// run function to pull saved cities from local storage and fill array with it
 function init(){
     let saved_cities = JSON.parse(localStorage.getItem("cities"));
 
@@ -52,9 +52,7 @@ function renderButtons(){
 //on click function for search history buttons
 function listClicker(){
 $(".listbtn").on("click", function(event){
-    console.log("anybody home?")
     event.preventDefault();
-    console.log("hello?");
     city = $(this).text().trim();
     APIcalls(); 
 })

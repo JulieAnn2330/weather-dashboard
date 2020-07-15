@@ -1,14 +1,14 @@
 /* Style of nav bar */
 .header {
-    text-align: center;
     color: white;
-    font-size: 40px;
+    font-size: 30px;
+    margin-right: 650px;
     }
 
 /* Style of ampersand */
 .ampersand {
     float: left;
-    margin-right: 10px;
+
 }
 
 /* Style of main forecast */
@@ -21,7 +21,7 @@
     width: 1025px;
     height: 350px;
     margin-left: 10px;
-    margin-top:90px;
+    margin-top: 80px !important;
     padding: 10px;
      }
      
@@ -32,12 +32,13 @@
     color: navy;
     }
 
-/* Style of forecast boxes */
-#forecast {
-    margin: 10px 10px 10px 25px;
-    height: 175px;
-    width: 175px;
-    }
+.card {
+  color: white;
+  width: 175px;
+  height: 190px;
+  background-color: slateblue;
+  margin: 0px 10px 10px 25px;
+}
 
 
 /* List of locations searched: */
@@ -70,7 +71,7 @@
     border: 1px solid navy;
     padding: 10px;
     background-color: lightgray;
-    margin-top: -635px;
+    margin-top: -600px;
     margin-left: 1080px;
 }
 
