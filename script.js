@@ -46,7 +46,8 @@ $.get(queryURL).then(function (response) {
         var windSpeed = response.wind.speed;
 
         var cityDiv = $("<div class='city'>");
-        var header = $("<h4>").text(city);
+        var header = $("<h1>").text(city);
+        // var icon = $("<img>").image(icon);
         var lineOne = $("<p>").text("Temperature: " + temperature + String.fromCharCode(176) + "F");
         var lineTwo = $("<p>").text("Humidity: " + humidity + "%");
         var lineThree = $("<p>").text("Wind Speed: " + windSpeed + "mph");
