@@ -41,6 +41,8 @@
     #searchedLocationsContainer{
       margin-right: 280px;
       padding: 10px;
+      height: 40px;
+      width: 300px;
       }
 
 /* Text of 5-Day forecast */

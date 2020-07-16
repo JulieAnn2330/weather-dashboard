@@ -1,4 +1,4 @@
-var locationsDiv = document.getElementById("searchedLocationsContainer");
+var locationsDiv = document.getElementById("searchedLocations");
 var lat = "latitude";
 var lon = "longitude";
 var uvIndex = (lat + lon);
@@ -10,7 +10,7 @@ searchClicker();
 
 // run function to pull saved cities from local storage and fill array with it
 function init(){
-    var savedLocations = JSON.parse(localStorage.getItem("locations"));
+     var savedLocations = JSON.parse(localStorage.getItem("locations"));
 
     if (savedLocations !== null){
         locations = savedLocations
@@ -60,10 +60,6 @@ $("#searchBtn").on("click", function(event){
     
     //push the city user entered into cities array 
     locations.push(city);
-    //make sure cities array.length is never more than 8 
-    if(locations.length > 8){
-        locations.shift()
-    }
     //return from function early if form is blank
     if (city == ""){
         return; 
@@ -77,7 +73,7 @@ $("#searchBtn").on("click", function(event){
 //runs 2 API calls, one for current weather data and one for five-day forecast, then populates text areas
 function APIcalls(){
     
-    forecastUrl = `https://api.openweathermap.org/data/2.5/onecall?q=${city}&exclude={part}&appid=${apiKey}`;
+    forecastUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
     currentWeatherUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}&units=imperial`;
     
     $("#nameOfCity").text("Today's Weather in " + city);
@@ -88,7 +84,7 @@ function APIcalls(){
         var dayNumber = 0; 
         
         //iterate through the 40 displayed weather reports
-        for(var i=1; i< response.list.length; i++){
+        for(var i=0; i< response.list.length; i++){
             
             // Pull data to display weather at 5pm daily
             if(response.list[i].dt_txt.split(" ")[1] == "18:00:00")
@@ -133,7 +129,7 @@ function APIcalls(){
          url:currentWeatherUrl,
          method: "GET", 
      }).then(function(currentData){
-         $("#weatherView").text("Today's weather in " + city + ":");
+         $("#weatherView").text("Today's Weather in " + city + ":");
          $("#todayTemp").text("Temperature: " + Math.round(currentData.main.temp) + String.fromCharCode(176)+"F");
          $("#todayHumidity").text("Humidity: " + currentData.main.humidity + "%");
          $("#todayWindSpeed").text("Wind Speed: " + currentData.wind.speed + " mph");

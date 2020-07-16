@@ -1,3 +1,15 @@
+Deployed program: https://julieann2330.github.io/weather-dashboard/
+
+Weather Dashboard
+
+This is a homework assignment that I created for the University of Kansas Coding BootCamp.
+
+This week's assignment was to create a weather dashboard utiliting the OpenWeather API. Users can search by city and the city stored in a search list for future reference. Upon searching the dashboard will display the current forecast, including temperature, humidity, wind speed, UV index and an icon representing the current weather. A five-day forecast is also included.
+
+I utilized several coding websites for help, including StackOverflow and w3schools.com I also watched YouTube tutorials and got assistance from fellow student Aurora Brune.
+
+The full details of the project are listed below.
+
 # 06 Server-Side APIs: Weather Dashboard
 
 Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
