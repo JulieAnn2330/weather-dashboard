@@ -108,9 +108,10 @@ function APIcalls(){
                 var month = response.list[i].dt_txt.split("-")[1];
                 var year = response.list[i].dt_txt.split("-")[0];
                 $("#" + day_number + "date").text(month + "/" + day + "/" + year); 
-                var temp = Math.round(((response.list[i].main.temp - 273.15) *9/5+32));
-                $("#" + day_number + "five_day_temp").text("Temp: " + temp + String.fromCharCode(176)+"F");
-                $("#" + day_number + "five_day_humidity").text("Humidity: " + response.list[i].main.humidity);
+       
+                var tempF = Math.round(((response.list[i].main.temp - 273.15) * 1.8 + 32));
+                $("#" + day_number + "five_day_temp").text("Temp: " + tempF + String.fromCharCode(176)+"F");
+                $("#" + day_number + "five_day_humidity").text("Humidity: " + response.list[i].main.humidity + "%");
                 $("#" + day_number + "five_day_icon").attr("src", "http://openweathermap.org/img/w/" + response.list[i].weather[0].icon + ".png");
                 console.log(response.list[i].dt_txt.split("-"));
                 console.log(day_number);
@@ -149,12 +150,12 @@ function APIcalls(){
          method: "GET", 
      }).then(function(current_data){
          console.log(current_data);
-         var temp = Math.round(((current_data.main.temp - 273.15) * 9/5 + 32))
+         var temp = Math.round(((current_data.main.temp - 273.15) * 1.8 + 32))
          console.log("The temperature in " + city + " is: " + temp);
          $("#weather-view").text("Today's weather in " + city + ":");
          $("#today_temp").text("Temperature: " + temp + String.fromCharCode(176)+"F");
-         $("#today_humidity").text("Humidity: " + current_data.main.humidity);
-         $("#today_wind_speed").text("Wind Speed: " + current_data.wind.speed);
+         $("#today_humidity").text("Humidity: " + current_data.main.humidity + "%");
+         $("#today_wind_speed").text("Wind Speed: " + current_data.wind.speed + " mph");
          $("#today_icon_div").attr({"src": "http://openweathermap.org/img/w/" + current_data.weather[0].icon + ".png",
           "height": "100px", "width":"100px"});
 
