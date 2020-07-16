@@ -2,7 +2,7 @@ var city="";
 var url="";
 var queryurl ="";
 var currenturl = "";
-var locationsDiv = document.getElementById("searched_locations_container");
+var locationsDiv = document.getElementById("searchedLocationsContainer");
 var lat = "latitude";
 var lon = "longitude";
 var uvIndex = (lat + lon);
@@ -56,8 +56,6 @@ $(".listbtn").on("click", function(event){
 })
 }
 
-
-
 //on click function for main search bar
 function searchClicker() {
 $("#searchBtn").on("click", function(event){
@@ -83,15 +81,12 @@ $("#searchBtn").on("click", function(event){
 //runs 2 API calls, one for current weather data and one for five-day forecast, then populates text areas
 function APIcalls(){
     
-    url = "https://api.openweathermap.org/data/2.5/forecast?q=";    
-    currenturl = "https://api.openweathermap.org/data/2.5/weather?q=";
-    APIkey = "&appid=19113027cee7d9c234b7c839da7576c2";
-    queryurl = url + city + APIkey;
-    current_weather_url = currenturl + city + APIkey; 
+    forecastUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
+    currentWeatherUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}&units=imperial`;
     
     $("#name_of_city").text("Today's Weather in " + city);
     $.ajax({
-        url: queryurl,
+        url: forecastUrl,
         method: "GET",
         
     }).then(function(response){
@@ -109,8 +104,7 @@ function APIcalls(){
                 var year = response.list[i].dt_txt.split("-")[0];
                 $("#" + day_number + "date").text(month + "/" + day + "/" + year); 
        
-                var tempF = Math.round(((response.list[i].main.temp - 273.15) * 1.8 + 32));
-                $("#" + day_number + "five_day_temp").text("Temp: " + tempF + String.fromCharCode(176)+"F");
+                $("#" + day_number + "five_day_temp").text("Temp: " + Math.round(response.list[i].main.temp) + String.fromCharCode(176)+"F");
                 $("#" + day_number + "five_day_humidity").text("Humidity: " + response.list[i].main.humidity + "%");
                 $("#" + day_number + "five_day_icon").attr("src", "http://openweathermap.org/img/w/" + response.list[i].weather[0].icon + ".png");
                 console.log(response.list[i].dt_txt.split("-"));
@@ -120,9 +114,8 @@ function APIcalls(){
                         }   
         }
     });
-    var queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}&units=imperial`;
 
-    $.get(queryURL).then(function (response) {
+    $.get(currentWeatherUrl).then(function (response) {
         var lon = response.coord.lon;
         var lat = response.coord.lat;
         var queryUV = `http://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${apiKey}`;
@@ -144,24 +137,17 @@ function APIcalls(){
       $("#todayUVIndex").text("UV Index: ").append(uvSpan);
  })
 
-    //function to display data in main div 
+    //function to display data in main box 
      $.ajax({
-         url:current_weather_url,
+         url:currentWeatherUrl,
          method: "GET", 
      }).then(function(current_data){
-         console.log(current_data);
-         var temp = Math.round(((current_data.main.temp - 273.15) * 1.8 + 32))
-         console.log("The temperature in " + city + " is: " + temp);
          $("#weather-view").text("Today's weather in " + city + ":");
-         $("#today_temp").text("Temperature: " + temp + String.fromCharCode(176)+"F");
+         $("#today_temp").text("Temperature: " + Math.round(current_data.main.temp) + String.fromCharCode(176)+"F");
          $("#today_humidity").text("Humidity: " + current_data.main.humidity + "%");
          $("#today_wind_speed").text("Wind Speed: " + current_data.wind.speed + " mph");
          $("#today_icon_div").attr({"src": "http://openweathermap.org/img/w/" + current_data.weather[0].icon + ".png",
           "height": "100px", "width":"100px"});
-
-        
-    
-
 });
     });
 };
