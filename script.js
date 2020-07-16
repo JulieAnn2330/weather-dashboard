@@ -73,8 +73,8 @@ $("#searchBtn").on("click", function(event){
 //runs 2 API calls, one for current weather data and one for five-day forecast, then populates text areas
 function APIcalls(){
     
-    forecastUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
-    currentWeatherUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}&units=imperial`;
+    forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
+    currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}&units=imperial`;
     
     $("#nameOfCity").text("Today's Weather in " + city);
     $.ajax({
