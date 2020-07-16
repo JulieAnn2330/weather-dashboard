@@ -11,7 +11,7 @@
 
 }
 
-#weather-view {
+#weatherView {
   margin-top: -50px;
 }
 
@@ -27,7 +27,22 @@
     margin-left: 10px;
     margin-top: 70px !important;
        }
-     
+ /* Style of Search Box */
+  #searchBox {
+    width: 25%;
+    height: 625px;
+    border: 1px solid navy;
+    padding: 10px;
+    background-color: lightgray;
+    margin-top: -600px;
+    margin-left: 1080px;
+    }
+
+    #searchedLocationsContainer{
+      margin-right: 280px;
+      padding: 10px;
+      }
+
 /* Text of 5-Day forecast */
 .fiveDayForecast {
     margin-top: -35px;
@@ -35,6 +50,7 @@
     color: navy;
     }
 
+    /* Style of 5-Day forecast boxes */
 .card {
   color: white;
   width: 175px;
@@ -42,7 +58,6 @@
   background-color: slateblue;
   margin: 5px 10px 10px 25px;
 }
-
 
 /* List of locations searched: */
 .locationList {
@@ -56,25 +71,14 @@
     color: white;
     font-size: 13px;
     margin-left: 650px;
-  
-    }
+      }
  
   /* Style of @media */
 @media only screen and (max-width: 600px) {
     body {
       background-color: lightgray;
     }
-  }
+  
 
-  /*  I just added this */
 
-#searchBox {
-    width: 25%;
-    height: 625px;
-    border: 1px solid navy;
-    padding: 10px;
-    background-color: lightgray;
-    margin-top: -600px;
-    margin-left: 1080px;
-}
 

@@ -33,60 +33,60 @@
 
 <!-- Weather Dashboard Code Here -->
 <div class="jumbotron">
-    <h1  id="weather-view" id = "name_of_city" class="title">Current Location</h>
-     <h3 id="today_temp"></h3>
-    <h3 id="today_humidity"></h3>
-    <h3 id="today_wind_speed"></h3>
+    <h1  id="weatherView" id = "nameOfCity" class="title">Current Location</h>
+     <h3 id="todayTemp"></h3>
+    <h3 id="todayHumidity"></h3>
+    <h3 id="todayWindSpeed"></h3>
     <h3 id="todayUVIndex"></h3>
-    <img id="today_icon_div" src="">
+    <img id="todayIconDiv" src="">
   </div>
 
-  <h2 class="fiveDayForecast">5-Day Forecast</h2>
+  <h2 class="fiveDayForecast">5-Day Forecast for 5pm Daily</h2>
   <div id="forecastIcons">
     <container></container>
        <div class="row">
        <div id="day0" class="card text-white">
            <h5 class="card-header" id="0date"></h5>
            <div class="card-body">
-             <p class="card-title" id="0five_day_temp"></p>
-             <p class="card-text" id="0five_day_humidity"></p>
-             <img id="0five_day_icon" src="">
+             <p class="card-title" id="0fiveDayTemp"></p>
+             <p class="card-text" id="0fiveDayHumidity"></p>
+             <img id="0fiveDayIcon" src="">
             </div>
          </div>
    
          <div id="day1" class="card text-white">
            <h5 class="card-header" id="1date"></h5>
            <div class="card-body">
-             <p class="card-title" id="1five_day_temp"></p>
-             <p class="card-text" id="1five_day_humidity"></p>
-             <img id="1five_day_icon" src="">
+             <p class="card-title" id="1fiveDayTemp"></p>
+             <p class="card-text" id="1fiveDayHumidity"></p>
+             <img id="1fiveDayIcon" src="">
            </div>
          </div>
    
          <div id="day2" class="card text-white">
           <h5 class="card-header" id="2date"></h5>
           <div class="card-body">
-            <p class="card-title" id="2five_day_temp"></p>
-            <p class="card-text" id="2five_day_humidity"></p>
-            <img id="2five_day_icon" src="">
+            <p class="card-title" id="2fiveDayTemp"></p>
+            <p class="card-text" id="2fiveDayHumidity"></p>
+            <img id="2fiveDayIcon" src="">
           </div>
         </div>
    
         <div id="day3" class="card text-white">
           <h5 class="card-header" id="3date"></h5>
           <div class="card-body">
-            <p class="card-title" id="3five_day_temp"></p>
-            <p class="card-text" id="3five_day_humidity"></p>
-            <img id="3five_day_icon" src="">
+            <p class="card-title" id="3fiveDayTemp"></p>
+            <p class="card-text" id="3fiveDayHumidity"></p>
+            <img id="3fiveDayIcon" src="">
           </div>
         </div>
    
         <div id="day4" class="card text-white">
           <h5 class="card-header" id="4date"></h5>
           <div class="card-body">
-            <p class="card-title" id="4five_day_temp"></p>
-            <p class="card-text" id="4five_day_humidity"></p>
-            <img id="4five_day_icon" src="">
+            <p class="card-title" id="4fiveDayTemp"></p>
+            <p class="card-text" id="4fiveDayHumidity"></p>
+            <img id="4fiveDayIcon" src="">
           </div>
         </div>
          </container>
@@ -94,14 +94,14 @@
         <!-- HTML for SEARCH BAR -->
         <div id="searchBox">
           <form id="weather-form">
-              </strong><label for="city-input"><strong>Search by City:</strong></label>
+              </strong><label for="cityInput"><strong>Search by City:</strong></label>
               <br>
-              <input type="text" id="city-input" placeholder="City">
+              <input type="text" id="cityInput" placeholder="City">
   
               <!-- Button will trigger new cities to be added -->
               <input id="searchBtn" class="btn btn-secondary mb-2" type="submit" value="Search" style="background-color:slateblue">
               <h5 class="justify-content-center pt-2 pl-3">Your previously searched cities: </h5>
-              <div class="container my-3 col-12" id="searchedLocationsContainer"></div>
+              <div class="container my-3 col-4" id="searchedLocationsContainer"></div>
       
             </div>
 
