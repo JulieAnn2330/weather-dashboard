@@ -136,5 +136,11 @@ function APIcalls(){
          $("#todayIconDiv").attr({"src": "http://openweathermap.org/img/w/" + currentData.weather[0].icon + ".png",
           "height": "100px", "width":"100px"});
 });
-    });
+function storeCurrentData(){
+    localStorage.setItem("currentData", JSON.stringify(currentData)); 
+}
+storeCurrentData();
+
+var storeCurrentData = JSON.parse(localStorage.getItem("currentData"));
+});
 };
