@@ -1,51 +1,49 @@
-let city=""; 
-let url="";
-let APIkey="";
-let queryurl ="";
-let currenturl = "";
-let citiesDiv = document.getElementById("searched_cities_container");
+var city=""; 
+var url="";
+var queryurl ="";
+var currenturl = "";
+var locationsDiv = document.getElementById("searched_locations_container");
 var lat = "latitude";
 var lon = "longitude";
 var uvIndex = (lat + lon);
 var apiKey = "19113027cee7d9c234b7c839da7576c2";
-//start with empty array
-let cities = ["Kansas City", "Naples", "New York City", "Lehigh Acres"];
+var locations = ["Kansas City", "Naples", "New York City", "Lehigh Acres"];
 init(); 
 listClicker(); 
 searchClicker(); 
 
 // run function to pull saved cities from local storage and fill array with it
 function init(){
-    let saved_cities = JSON.parse(localStorage.getItem("cities"));
+    var savedLocations = JSON.parse(localStorage.getItem("locations"));
 
-    if (saved_cities !== null){
-        cities = saved_cities
+    if (savedLocations !== null){
+        locations = savedLocations
     }   
     
     renderButtons(); 
 }
 
 //sets localstorage item to cities array 
-function storeCities(){
-    localStorage.setItem("cities", JSON.stringify(cities)); 
+function storeLocations(){
+    localStorage.setItem("locations", JSON.stringify(locations)); 
 }
 
 
 //render buttons for each element in cities array as a search history for user
 function renderButtons(){
-    citiesDiv.innerHTML = ""; 
-    if(cities == null){
+    locationsDiv.innerHTML = ""; 
+    if(locations == null){
         return;
     }
-    let unique_cities = [...new Set(cities)];
-    for(let i=0; i < unique_cities.length; i++){
-        let cityName = unique_cities[i]; 
+    var unique_locations = [...new Set(locations)];
+    for(var i=0; i < unique_locations.length; i++){
+        var cityName = unique_locations[i]; 
 
-        let buttonEl = document.createElement("button");
-        buttonEl.textContent = cityName; 
-        buttonEl.setAttribute("class", "listbtn"); 
+        var buttonElement = document.createElement("button");
+        buttonElement.textContent = cityName; 
+        buttonElement.setAttribute("class", "listbtn"); 
 
-        citiesDiv.appendChild(buttonEl);
+        locationsDiv.appendChild(buttonElement);
         listClicker();
       }
     }
@@ -67,17 +65,17 @@ $("#searchBtn").on("click", function(event){
     city = $(this).prev().val().trim()
     
     //push the city user entered into cities array 
-    cities.push(city);
+    locations.push(city);
     //make sure cities array.length is never more than 8 
-    if(cities.length > 8){
-        cities.shift()
+    if(locations.length > 8){
+        locations.shift()
     }
     //return from function early if form is blank
     if (city == ""){
         return; 
     }
     APIcalls();
-    storeCities(); 
+    storeLocations(); 
     renderButtons();
 })
 }
@@ -87,7 +85,7 @@ function APIcalls(){
     
     url = "https://api.openweathermap.org/data/2.5/forecast?q=";    
     currenturl = "https://api.openweathermap.org/data/2.5/weather?q=";
-    APIkey = "&appid=5ce8439fd4264478d1da0b24a7cd547d";
+    APIkey = "&appid=19113027cee7d9c234b7c839da7576c2";
     queryurl = url + city + APIkey;
     current_weather_url = currenturl + city + APIkey; 
     
@@ -97,20 +95,20 @@ function APIcalls(){
         method: "GET",
         
     }).then(function(response){
-        let day_number = 0; 
+        var day_number = 0; 
         
         //iterate through the 40 weather data sets
-        for(let i=0; i< response.list.length; i++){
+        for(var i=0; i< response.list.length; i++){
             
             //split function to isolate the time from the time/data aspect of weather data, and only select weather reports for 3pm
             if(response.list[i].dt_txt.split(" ")[1] == "15:00:00")
             {
                 //if time of report is 3pm, populate text areas accordingly
-                let day = response.list[i].dt_txt.split("-")[2].split(" ")[0];
-                let month = response.list[i].dt_txt.split("-")[1];
-                let year = response.list[i].dt_txt.split("-")[0];
+                var day = response.list[i].dt_txt.split("-")[2].split(" ")[0];
+                var month = response.list[i].dt_txt.split("-")[1];
+                var year = response.list[i].dt_txt.split("-")[0];
                 $("#" + day_number + "date").text(month + "/" + day + "/" + year); 
-                let temp = Math.round(((response.list[i].main.temp - 273.15) *9/5+32));
+                var temp = Math.round(((response.list[i].main.temp - 273.15) *9/5+32));
                 $("#" + day_number + "five_day_temp").text("Temp: " + temp + String.fromCharCode(176)+"F");
                 $("#" + day_number + "five_day_humidity").text("Humidity: " + response.list[i].main.humidity);
                 $("#" + day_number + "five_day_icon").attr("src", "http://openweathermap.org/img/w/" + response.list[i].weather[0].icon + ".png");
@@ -151,7 +149,7 @@ function APIcalls(){
          method: "GET", 
      }).then(function(current_data){
          console.log(current_data);
-         let temp = Math.round(((current_data.main.temp - 273.15) * 9/5 + 32))
+         var temp = Math.round(((current_data.main.temp - 273.15) * 9/5 + 32))
          console.log("The temperature in " + city + " is: " + temp);
          $("#weather-view").text("Today's weather in " + city + ":");
          $("#today_temp").text("Temperature: " + temp + String.fromCharCode(176)+"F");

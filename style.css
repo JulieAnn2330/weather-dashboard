@@ -2,7 +2,7 @@
 .header {
     color: white;
     font-size: 30px;
-    margin-right: 650px;
+    margin-right: 800px;
     }
 
 /* Style of ampersand */
@@ -38,7 +38,7 @@
 .card {
   color: white;
   width: 175px;
-  height: 190px;
+  height: 200px;
   background-color: slateblue;
   margin: 5px 10px 10px 25px;
 }
