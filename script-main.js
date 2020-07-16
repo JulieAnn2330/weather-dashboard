@@ -1,7 +1,3 @@
-var city=""; 
-var url="";
-var queryurl ="";
-var currenturl = "";
 var locationsDiv = document.getElementById("searchedLocationsContainer");
 var lat = "latitude";
 var lon = "longitude";
