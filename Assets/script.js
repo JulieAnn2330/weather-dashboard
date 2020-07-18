@@ -4,11 +4,18 @@ var lon = "longitude";
 var uvIndex = (lat + lon);
 var apiKey = "19113027cee7d9c234b7c839da7576c2";
 var locations = ["Kansas City", "Naples", "New York City", "Lehigh Acres"];
+
 init(); 
 listClicker(); 
 searchClicker(); 
 
-// run function to pull saved cities from local storage and fill array with it
+localStorage.setItem("currentData", "Kansas City"); 
+var defaultCity= localStorage.getItem("currentData");
+
+console.log(localStorage);
+
+
+// Pull saved cities from array and fill buttons
 function init(){
      var savedLocations = JSON.parse(localStorage.getItem("locations"));
 
@@ -23,7 +30,6 @@ function init(){
 function storeLocations(){
     localStorage.setItem("locations", JSON.stringify(locations)); 
 }
-
 
 //render buttons for each element in cities array as a search history for user
 function renderButtons(){
@@ -43,7 +49,8 @@ function renderButtons(){
         listClicker();
       }
     }
-//on click function for search history buttons
+
+//on click function for search history buttons allowing user to go back and view data
 function listClicker(){
 $(".listbtn").on("click", function(event){
     event.preventDefault();
@@ -64,13 +71,14 @@ $("#searchBtn").on("click", function(event){
     if (city == ""){
         return; 
     }
+
     APIcalls();
     storeLocations(); 
     renderButtons();
 })
 }
 
-//runs 2 API calls, one for current weather data and one for five-day forecast, then populates text areas
+//Call the current forecast and the 5-Day forecast
 function APIcalls(){
     
     forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
@@ -83,13 +91,13 @@ function APIcalls(){
     }).then(function(response){
         var dayNumber = 0; 
         
-        //iterate through the 40 displayed weather reports
+        //sort through the 40 displayed weather reports
         for(var i=0; i< response.list.length; i++){
             
             // Pull data to display weather at 5pm daily
             if(response.list[i].dt_txt.split(" ")[1] == "18:00:00")
             {
-                //if time of report is 5pm, populate text areas accordingly
+                // Populate five-day forecast
                 var day = response.list[i].dt_txt.split("-")[2].split(" ")[0];
                 var month = response.list[i].dt_txt.split("-")[1];
                 var year = response.list[i].dt_txt.split("-")[0];
@@ -103,6 +111,7 @@ function APIcalls(){
         }
     });
 
+    // Get UV Index info and code colors to it
     $.get(currentWeatherUrl).then(function (response) {
         var lon = response.coord.lon;
         var lat = response.coord.lat;
@@ -123,24 +132,19 @@ function APIcalls(){
       var uvSpan = $("<span>").text(uvResponse.value).css("color", color);
       $("#todayUVIndex").text("UV Index: ").append(uvSpan);
  })
-
+ 
     //function to display data in main box 
      $.ajax({
          url:currentWeatherUrl,
          method: "GET", 
      }).then(function(currentData){
-         $("#weatherView").text("Today's Weather in " + city + ":");
+         $("#nameOfCity").text("Today's Weather in " + city + ":");
          $("#todayTemp").text("Temperature: " + Math.round(currentData.main.temp) + String.fromCharCode(176)+"F");
          $("#todayHumidity").text("Humidity: " + currentData.main.humidity + "%");
          $("#todayWindSpeed").text("Wind Speed: " + currentData.wind.speed + " mph");
          $("#todayIconDiv").attr({"src": "http://openweathermap.org/img/w/" + currentData.weather[0].icon + ".png",
           "height": "100px", "width":"100px"});
-});
-function storeCurrentData(){
-    localStorage.setItem("currentData", JSON.stringify(currentData)); 
-}
-storeCurrentData();
-
-var storeCurrentData = JSON.parse(localStorage.getItem("currentData"));
+     });
+   
 });
 };
