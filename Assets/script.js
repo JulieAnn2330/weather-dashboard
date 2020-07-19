@@ -9,12 +9,6 @@ init();
 listClicker(); 
 searchClicker(); 
 
-localStorage.setItem("currentData", "Kansas City"); 
-var defaultCity= localStorage.getItem("currentData");
-
-console.log(localStorage);
-
-
 // Pull saved cities from array and fill buttons
 function init(){
      var savedLocations = JSON.parse(localStorage.getItem("locations"));
@@ -144,7 +138,8 @@ function APIcalls(){
          $("#todayWindSpeed").text("Wind Speed: " + currentData.wind.speed + " mph");
          $("#todayIconDiv").attr({"src": "http://openweathermap.org/img/w/" + currentData.weather[0].icon + ".png",
           "height": "100px", "width":"100px"});
-     });
-   
+        // var currentData = localStorage.setItem("currentData", "#nameOfCity");
+        // console.log("currentData");
+    });
 });
 };
