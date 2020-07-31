@@ -9,6 +9,15 @@ init();
 listClicker(); 
 searchClicker(); 
 
+function renderLastCity() {
+    var lastCity=JSON.parse(localStorage.getItem("locations"));
+    console.log(lastCity[lastCity.length-1]);
+    var finalCity = lastCity[lastCity.length-1]
+    APIcalls(finalCity);
+}
+
+renderLastCity();
+
 // Pull saved cities from array and fill buttons
 function init(){
      var savedLocations = JSON.parse(localStorage.getItem("locations"));
@@ -57,7 +66,7 @@ $(".listbtn").on("click", function(event){
 function searchClicker() {
 $("#searchBtn").on("click", function(event){
     event.preventDefault();
-    city = $(this).prev().val().trim()
+    var city = $(this).prev().val().trim()
     
     //push the city user entered into cities array 
     locations.push(city);
@@ -138,8 +147,6 @@ function APIcalls(){
          $("#todayWindSpeed").text("Wind Speed: " + currentData.wind.speed + " mph");
          $("#todayIconDiv").attr({"src": "http://openweathermap.org/img/w/" + currentData.weather[0].icon + ".png",
           "height": "100px", "width":"100px"});
-        // var currentData = localStorage.setItem("currentData", "#nameOfCity");
-        // console.log("currentData");
     });
 });
 };
