@@ -1,12 +1,17 @@
-Deployed program: https://julieann2330.github.io/weather-dashboard/
 
 Weather Dashboard
+
+Deployed program: https://julieann2330.github.io/weather-dashboard/
+
+Technologies Used: HTML, Bootstrap, CSS, JavaScript, jQuery, OpenWeather API Call, Ajax
 
 This is a homework assignment that I created for the University of Kansas Coding BootCamp.
 
 This week's assignment was to create a weather dashboard utiliting the OpenWeather API. Users can search by city and the city is stored in a search list for future reference. Upon searching the dashboard will display the current forecast, including temperature, humidity, wind speed, UV index and an icon representing the current weather. A five-day forecast is also included.
 
 I utilized several coding websites for help, including StackOverflow and w3schools.com I also watched YouTube tutorials and got assistance from fellow student Aurora Brune.
+
+[image](https://user-images.githubusercontent.com/64329660/89042630-d97ae680-d30c-11ea-8d54-51012eb0b261.png)
 
 The full details of the project are listed below.
 
