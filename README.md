@@ -11,7 +11,7 @@ This week's assignment was to create a weather dashboard utiliting the OpenWeath
 
 I utilized several coding websites for help, including StackOverflow and w3schools.com I also watched YouTube tutorials and got assistance from fellow student Aurora Brune.
 
-[image](https://user-images.githubusercontent.com/64329660/89042630-d97ae680-d30c-11ea-8d54-51012eb0b261.png)
+![image](https://user-images.githubusercontent.com/64329660/89042630-d97ae680-d30c-11ea-8d54-51012eb0b261.png)
 
 The full details of the project are listed below.
 
