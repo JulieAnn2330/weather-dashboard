@@ -9,15 +9,6 @@ init();
 listClicker(); 
 searchClicker(); 
 
-function renderLastCity() {
-    var lastCity=JSON.parse(localStorage.getItem("locations"));
-    console.log(lastCity[lastCity.length-1]);
-    var finalCity = lastCity[lastCity.length-1]
-    APIcalls(finalCity);
-}
-
-renderLastCity();
-
 // Pull saved cities from array and fill buttons
 function init(){
      var savedLocations = JSON.parse(localStorage.getItem("locations"));
