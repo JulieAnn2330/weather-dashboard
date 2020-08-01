@@ -109,7 +109,7 @@ function APIcalls(){
     $.get(currentWeatherUrl).then(function (response) {
         var lon = response.coord.lon;
         var lat = response.coord.lat;
-        var queryUV = `http://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+        var queryUV = `https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${apiKey}`;
                 
         $.get(queryUV)
         .then(function (uvResponse) {
