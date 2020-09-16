@@ -1,74 +1,78 @@
 
-Weather Dashboard
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 
-Deployed program: https://julieann2330.github.io/weather-dashboard/
+</head>
+<body>
+<div id = "top">
 
-Technologies Used: HTML, Bootstrap, CSS, JavaScript, jQuery, OpenWeather API Call, Ajax
+<h2>Weather Dashboard</h2> <a href="#license"><img src= "https://img.shields.io/badge/License-MIT-blue.svg"></a><br>
 
-This is a homework assignment that I created for the University of Kansas Coding BootCamp.
+<hr color= "slateblue" noshade>
 
-This week's assignment was to create a weather dashboard utiliting the OpenWeather API. Users can search by city and the city is stored in a search list for future reference. Upon searching the dashboard will display the current forecast, including temperature, humidity, wind speed, UV index and an icon representing the current weather. A five-day forecast is also included.
+<h2>Table of Contents:</h2>
+<a href="#description" class="contents">1. Description of Project</><br>
+<a href="#technology" class="contents">2. Technologies Used</a><br>
+<a href="#installation" class="contents">3. Installation Directions</a><br>
+<a href="#use" class="contents">4. How to Use the Project</a><br>
+<a href="#contributors" class="contents">5. Contributing</a><br> 
+<a href="#questions" class="contents">6. Questions or Comments</a><br>
+<a href="#license" class="contents">7. License</a><br>
+<a href="#screenshot" class="contents">8. Screenshots of Project</><br>
+<br>
 
-I utilized several coding websites for help, including StackOverflow and w3schools.com I also watched YouTube tutorials and got assistance from fellow student Aurora Brune.
+<hr color= "slateblue" noshade>
 
-![image](https://user-images.githubusercontent.com/64329660/89042630-d97ae680-d30c-11ea-8d54-51012eb0b261.png)
+<h3 id='description'>Description of Project</h3>
+<p>This interactive weather app displays temperature, humidity, wind speed, UV index and a weather icon for the current day. The five-day forcast displays the projected temperature at 5pm local time, humidity and weather icon. Users enter a city and click search to display results. Past cities searched are stored and displayed underneath. This was a homework assignment for the University of Kansas Full Stack Bootcamp. This project gives the user current and forecast weather for the next five days. This would especially helpful for an employee traveling to a differnt city for work. I learned a lot about API calls in completing this project. The clean styling and display of the application page make this project stand out. </p><br>
+<a href="#top" id="start">(Back to Top of Page)</a><br>
+<br>
+<hr color= "slateblue" noshade>
 
-The full details of the project are listed below.
+<h3 id='techology'>Technologies Used</h3>
+<p>This project incoporates the following tecnologies:<br>
+HTML,CSS,Bootstrap,JavaScript,jQuery,API Calls,AJAX</p><br>
+<a href="#top" id="start">(Back to Top of Page)</a><br>
+<br>
+<hr color= "slateblue" noshade>
 
-# 06 Server-Side APIs: Weather Dashboard
+<h3 id='installation'>Installation</h3>
+<p>No steps are required to install the project.</p><br>
+<a href="#top" id="start">(Back to Top of Page)</a><br>
+<br>
+<hr color= "slateblue" noshade>
 
-Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+<h3 id='use'>How to Use the Project</h3>
+<p>To use the project, enter the name of a city in the box provided and click the button.</p><br>
+<a href="#top" id="start">(Back to Top of Page)</a><br>
+<br>
+<hr color= "slateblue" noshade>
 
-Use the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. The documentation includes a section called "How to start" that will provide basic setup and usage instructions. Use `localStorage` to store any persistent data.
+<h3 id='contributors'>Contributing to the Project</h3>
+<p>Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-## User Story
+Please make sure to update tests as appropriate.</p><br>
+<a href="#top" id="start">(Back to Top of Page)</a><br>
+<br>
+<hr color= "slateblue" noshade>
 
-```
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-```
+<h3 id='questions'>For Questions or Comments</h3>
+<p>Please contact me at github.com/JulieAnn2330 or julie.schaub@midtownfullstack.com for questions or comments.</p><br>
+<a href="#top" id="start">(Back to Top of Page)</a><br>
+<br>
+<hr color= "slateblue" noshade>
 
-## Acceptance Criteria
+<h3 id='license'>License</h3>
+<p>This project incorporates the following license: <a href="https://opensource.org/licenses/MIT">MIT</a></p>
+<a href="#top" id="start">(Back to Top of Page)</a><br>
 
-```
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-WHEN I view the UV index
-THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
-WHEN I open the weather dashboard
-THEN I am presented with the last searched city forecast
-```
+<hr color= "slateblue" noshade>
 
-The following image demonstrates the application functionality:
-
-![weather dashboard demo](./Assets/06-server-side-apis-homework-demo.png)
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
-
-Copyright 2020, Julie Ann Schaub
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-Contact Me: 
-Julie Ann Schaub | julie.schaub@midtownfullstack.com
+<h3 id='screenshot'>Screenshots</h3>
+    
+</body>
+</html> 
