@@ -28,7 +28,11 @@
 <hr color= "slateblue" noshade>
 
 <h3 id='description'>Description of Project</h3>
-<p>This interactive weather app displays temperature, humidity, wind speed, UV index and a weather icon for the current day. The five-day forcast displays the projected temperature at 5pm local time, humidity and weather icon. Users enter a city and click search to display results. Past cities searched are stored and displayed underneath. This was a homework assignment for the University of Kansas Full Stack Bootcamp. This project gives the user current and forecast weather for the next five days. This would especially helpful for an employee traveling to a differnt city for work. I learned a lot about API calls in completing this project. The clean styling and display of the application page make this project stand out. </p><br>
+<p>This interactive weather app displays temperature, humidity, wind speed, UV index and a weather icon for the current day. The five-day forcast displays the projected temperature at 5pm local time, humidity and weather icon. Users enter a city and click search to display results. Past cities searched are stored and displayed underneath. This was a homework assignment for the University of Kansas Full Stack Bootcamp. This project gives the user current and forecast weather for the next five days. This would especially helpful for an employee traveling to a differnt city for work. I learned a lot about API calls in completing this project. The clean styling and display of the application page make this project stand out. A link to the deployed app can be found here:
+ 
+ <a href="https://julieann2330.github.io/weather-dashboard/">Weather Dashboard</a>
+
+</p><br>
 <a href="#top" id="start">(Back to Top of Page)</a><br>
 <br>
 <hr color= "slateblue" noshade>
